@@ -89,5 +89,14 @@ googlejapaneseinput (1).dmg
 googlejapaneseinput.dmg
 
 [課題用サンプルプロジェクトの apk ファイルをコマンド経由で端末にインストールする]
-
 [インストールしたアプリを、コマンド経由でアンインストールする]
+90201710n:3rd nobuhisa.hirata$ adb install dev1.apk
+1072 KB/s (196031 bytes in 0.178s)
+     pkg: /data/local/tmp/dev1.apk
+Failure [INSTALL_FAILED_ALREADY_EXISTS]
+90201710n:3rd nobuhisa.hirata$ adb uninstall com.example.dev1
+Success
+90201710n:3rd nobuhisa.hirata$ adb install dev1.apk
+1166 KB/s (196031 bytes in 0.164s)
+     pkg: /data/local/tmp/dev1.apk
+Success
