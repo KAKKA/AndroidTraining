@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item>
+        <shape android:shape="rectangle" >
+            <solid android:color="@android:color/black" />
+            <size
+                android:height="100dp"
+                android:width="100dp" />
+        </shape>
+    </item>
+    
+    <!-- 一番上のレイヤに配置する、薄茶色で塗りつぶされた四角形の Drawable を持つ item 要素 -->
+    <item>
+        <shape android:shape="rectangle" >
+            <solid android:color="#deb887" />
+            <!-- 角を丸める -->
+            <corners android:radius="50dp" />
+
+            <size
+                android:height="100dp"
+                android:width="100dp" />
+        </shape>
+    </item>
+
+</layer-list>
