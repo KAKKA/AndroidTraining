@@ -22,6 +22,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".NewActivity1" >
+        </activity>
+        <activity android:name=".NewActivity2" >
+        </activity>
+        <activity android:name=".NewActivity3" >
+        </activity>
     </application>
 
 </manifest>
