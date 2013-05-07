@@ -6,5 +6,10 @@
     <string name="hello_world">Hello world!</string>
     <!-- TODO: 実習1: ここから下に、日本語の String リソースを作る -->
     <!-- TODO: 実習2: 日本語の String リソースに対応する英語リソースを作る -->
+    <string name="ojisan">ぎゃあああ！！！おじさん！！おじさん！</string>
+    <string name="ojisama">どぅええええ！？おじさん！！おじさん！！</string>
+    <string name="funatsu">まったく！！舟津山はまったく！！</string>
+    <string name="kakka">ビッビッビッビッビッビッビッビッ</string>
+    <string name="ishii">ｱｻﾞｯｽｱｻﾞｯｽｱｻﾞｯｽｱｻﾞｯｽｱｻﾞｯｽ</string>
 
 </resources>
