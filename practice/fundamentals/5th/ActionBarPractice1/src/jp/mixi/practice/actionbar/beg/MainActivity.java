@@ -1,10 +1,12 @@
-
 package jp.mixi.practice.actionbar.beg;
+
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.ActionBar.Tab;
 import com.actionbarsherlock.app.ActionBar.TabListener;
 import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
@@ -23,7 +25,18 @@ public class MainActivity extends SherlockActivity implements TabListener {
 		getSupportActionBar().addTab(getSupportActionBar().newTab().setText("佐野").setTabListener(this));
 		getSupportActionBar().addTab(getSupportActionBar().newTab().setText("takeny").setTabListener(this));
 	}
-	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+	    // メニューの要素を追加
+	    getSupportMenuInflater().inflate(R.menu.main, menu);
+	    return true;
+	}
+	 
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    Toast.makeText(this, "Selected Item: " + item.getTitle(), Toast.LENGTH_SHORT).show();
+	    return true;
+	}
 	// タブナビゲーションの Tab が選択された時のコールバック
 	public void onTabSelected(Tab tab, FragmentTransaction ft) {
 		Toast.makeText(getApplicationContext(), tab.getText(), Toast.LENGTH_SHORT).show();
@@ -39,4 +52,5 @@ public class MainActivity extends SherlockActivity implements TabListener {
 	public void onTabReselected(Tab tab, FragmentTransaction ft) {
 
 	}
+	
 }

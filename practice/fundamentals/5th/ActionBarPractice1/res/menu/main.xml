@@ -1,9 +1,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-
+<!-- sherlockの場合アイコンとwithTextの場合、横幅が狭い時はアイコンだけ表示され、横幅が広いときはテキストも表示され、区切り線も表示される。 -->
     <item
         android:id="@+id/action_settings"
+        android:showAsAction="ifRoom|withText"
+        android:icon="@android:drawable/alert_dark_frame"
         android:orderInCategory="100"
-        android:showAsAction="never"
         android:title="@string/action_settings"/>
-
+    <item
+        android:id="@+id/login"
+        android:showAsAction="ifRoom|withText"
+        android:icon="@android:drawable/arrow_down_float"
+        android:orderInCategory="100"
+        android:title="Login"/>
+    <item
+        android:id="@+id/refresh"
+        android:showAsAction="ifRoom|withText"
+        android:icon="@android:drawable/btn_dialog"
+        android:orderInCategory="100"
+        android:title="Refresh"/>
+    
 </menu>
