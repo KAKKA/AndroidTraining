@@ -7,7 +7,8 @@ import com.actionbarsherlock.app.ActionBar.TabListener;
 import com.actionbarsherlock.app.SherlockActivity;
 
 import android.os.Bundle;
-import android.app.FragmentTransaction;
+import android.support.v4.app.FragmentTransaction;
+import android.widget.Toast;
 
 public class MainActivity extends SherlockActivity implements TabListener {
 	@Override
@@ -25,6 +26,7 @@ public class MainActivity extends SherlockActivity implements TabListener {
 	
 	// タブナビゲーションの Tab が選択された時のコールバック
 	public void onTabSelected(Tab tab, FragmentTransaction ft) {
+		Toast.makeText(getApplicationContext(), tab.getText(), Toast.LENGTH_SHORT).show();
 
 	}
 
@@ -37,26 +39,4 @@ public class MainActivity extends SherlockActivity implements TabListener {
 	public void onTabReselected(Tab tab, FragmentTransaction ft) {
 
 	}
-
-	@Override
-	public void onTabReselected(Tab tab,
-			android.support.v4.app.FragmentTransaction ft) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void onTabSelected(Tab tab,
-			android.support.v4.app.FragmentTransaction ft) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void onTabUnselected(Tab tab,
-			android.support.v4.app.FragmentTransaction ft) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }
