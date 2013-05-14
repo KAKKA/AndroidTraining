@@ -34,7 +34,7 @@ public class MainActivity extends Activity {
                         .setContentTitle("unko")
                         .setContentText("どぅえええ！？")
                         .setSmallIcon(R.drawable.ic_launcher)
-                        .setTicker("おんどれあ　やんのかこらあ　ぶっ殺す！")
+                        .setTicker("おんどれあ　やんのかこらあ　ぶっ殺す！") // practice 4
                         .setContentIntent(activityIntent)
                         .setOnlyAlertOnce(false)
                         .setDefaults(Notification.DEFAULT_VIBRATE)
