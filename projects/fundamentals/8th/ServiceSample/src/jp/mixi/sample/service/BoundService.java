@@ -54,3 +54,37 @@ public class BoundService extends Service {
         }
     }
 }
+//-----report-----
+//
+//(i)Started Service Controll
+//[start]
+//StartedService onCreate
+//StartedService onStartCommand
+//[start]
+//StartedService onStartCommand
+//[home]
+// --
+//[exit]
+// --
+//[stop]
+//StartedService onDestroy
+//
+//(ii)Bound Service Controll
+//[bind]
+//BoundService onCreate
+//MainActivity onServiceConnected
+//[home]
+// --
+//[exit]
+//BoundService onUnbind
+//BoundService onDestroy
+//[unbind]
+//BoundService onUnbind
+//BoundService onDestroy
+//
+//(iii)Intent Service Controll
+//[Call IntentService]
+//MyIntentService onCreate
+//MyIntentService onStartCommand
+//MyIntentService onHandleIntent
+//MyIntentService onDestroy
