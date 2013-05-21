@@ -4,14 +4,19 @@ package jp.mixi.sample.async.asynctask;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
+    Handler guiThreadHandler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        guiThreadHandler = new Handler();
         setContentView(R.layout.activity_main);
 
         // AsyncTask のインスタンスを生成し、非同期処理を実行する
@@ -69,6 +74,15 @@ public class MainActivity extends Activity {
                 Thread.sleep(2000L);
                 publishProgress();
                 Thread.sleep(2000L);
+                //UIの処理がGUIスレッドで行わないといけないため、ここで直接viewを編集すると落ちる。
+                //よってこのように実装することでviewの編集が可能になる。
+                guiThreadHandler.post(new Runnable(){
+                    @Override
+                    public void run() {
+                        TextView textView = (TextView) findViewById(R.id.text_view);
+                        textView.setText("タナカなにいうとんのや！");
+                    }      
+                });
                 publishProgress();
             } catch (InterruptedException e) {
                 Log.e(MyAsyncTask.class.getSimpleName(), "thread interrupted: ", e);

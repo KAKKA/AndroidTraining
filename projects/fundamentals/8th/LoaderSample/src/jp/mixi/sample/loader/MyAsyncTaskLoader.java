@@ -17,7 +17,7 @@ public class MyAsyncTaskLoader extends AsyncTaskLoader<String> {
     public String loadInBackground() {
         Log.v(TAG, "loadInBackground");
         try {
-            Thread.sleep(1000L);
+            Thread.sleep(10000L);
         } catch (InterruptedException e) {
             Log.e(TAG, "interrupted!: ", e);
         }
@@ -76,3 +76,21 @@ public class MyAsyncTaskLoader extends AsyncTaskLoader<String> {
         super.onReset();
     }
 }
+//-----report-----
+//[run]
+//MainActivity onCreateLoader
+//MyAsyncTaskLoader onStartLoading
+//MyAsyncTaskLoader loadInBackground
+
+//MyAsyncTaskLoader deliverResult
+//MainActivity onLoadFinished
+//[home]
+//MyAsyncTaskLoader onStopLoading
+//[run]
+//MyAsyncTaskLoader onStartLoading
+//MyAsyncTaskLoader deliverResult
+//[exit]
+//MyAsyncTaskLoader onStopLoading
+//MainActivity onLoaderReset
+//MyAsyncTaskLoader onReset
+//MyAsyncTaskLoader onStopLoading
