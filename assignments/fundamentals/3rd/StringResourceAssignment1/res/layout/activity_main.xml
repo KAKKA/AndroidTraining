@@ -12,14 +12,12 @@
     <TextView
         android:id="@+id/PluralsTextForOne"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world"/>
+        android:layout_height="wrap_content" />
 
     <!-- PluralsTextForOne に、量が 2 以上の時の表示をする -->
     <TextView
         android:id="@+id/PluralsTextForOther"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/PluralsTextForOne"
-        android:text="@string/hello_world"/>
+        android:layout_below="@+id/PluralsTextForOne" />
 </RelativeLayout>
