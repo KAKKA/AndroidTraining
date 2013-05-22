@@ -21,3 +21,9 @@ public class MainActivity extends Activity {
     }
 
 }
+//実行時間がかかるTOP5  
+//org/apache/harmony/dalvik/ddmc/DdmServer.dispatch 0.120
+//android/ddm/DdmHandleProfiling.handleChunk             0.096
+//java/util/HashMap.get                                                 0.074
+//java/lang/Integer.valueOf                                             0.047
+//android/ddm/DdmHandleProfiling.handleMPRQ             0.049
