@@ -1,7 +1,9 @@
 
 package jp.mixi.practice.dialog;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
@@ -10,6 +12,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity {
 
@@ -28,7 +31,7 @@ public class MainActivity extends FragmentActivity {
 
     private void showPracticeDialog() {
         // TODO:ダイアログを表示する処理を実装してください
-        DialogFragment myDialogFragment = new PracticeDialogFragment();
+        DialogFragment myDialogFragment = new MyAlertDialogFragment();
         // 引数にFramentManagerとtagを設定します
         myDialogFragment.show(getSupportFragmentManager(), "practice_dialog_fragment");
     }
@@ -41,24 +44,27 @@ public class MainActivity extends FragmentActivity {
     }
 
     // TODO:独自DialogFragmentを実装してください
-    public static class PracticeDialogFragment extends DialogFragment {
-        /**
-         * Dialogを使用して、コンテンツ領域に独自レイアウトは表示するサンプルです。
-         */
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            // 独自のレイアウトをコンテンツ領域表示する場合、ここでViewをinfrateして返却する
-            return inflater.inflate(R.layout.my_dialog_fragment, container, false);
-        }
-
+    /**
+     * AlertDialogを使用するサンプルです。コンテンツ領域に独自レイアウトは表示しません。
+     */
+    public static class MyAlertDialogFragment extends DialogFragment {
+        
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
-            // Dialogを生成
-            Dialog dialog = super.onCreateDialog(savedInstanceState);
-            // タイトルを設定
-            dialog.setTitle(R.string.paractice);
-            return dialog;
-        }
 
+            // AlertDialogはBuilderパターンで生成
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            builder.setIcon(R.drawable.ic_launcher);
+            builder.setTitle(R.string.paractice);
+            builder.setMessage(R.string.message)
+            // OKボタン
+            .setPositiveButton(R.string.close, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    Toast.makeText(getActivity(), "Positive", Toast.LENGTH_SHORT).show();
+                }
+            });
+            // Dialogを作成して返却
+            return builder.create();
+        }
     }
 }
