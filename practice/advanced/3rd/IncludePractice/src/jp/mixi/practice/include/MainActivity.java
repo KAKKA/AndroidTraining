@@ -21,3 +21,8 @@ public class MainActivity extends Activity {
     }
 
 }
+//(実習) include を使用したレイアウトを作成し、
+//merge の有り無しで View の階層がどのようになるのかを Hierarchy View で確認してレポートしてください。
+
+//mergeなしだと、LinearLayoutのタグが入り（includeするxmlをLinearLayoutで書いた）階層が一段階深くなった。
+//mergeありだと、textViewと同じレイヤーにボタンが配置された

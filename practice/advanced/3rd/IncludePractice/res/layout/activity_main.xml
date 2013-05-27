@@ -15,4 +15,6 @@
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
 
+    <include layout="@layout/unko" />
+
 </RelativeLayout>
