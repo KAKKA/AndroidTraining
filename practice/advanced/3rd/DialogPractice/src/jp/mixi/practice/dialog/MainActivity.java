@@ -13,6 +13,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Toast;
+import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentActivity;
+import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
 
 public class MainActivity extends FragmentActivity {
 
@@ -66,5 +72,7 @@ public class MainActivity extends FragmentActivity {
             // Dialogを作成して返却
             return builder.create();
         }
+    public static class PracticeDialogFragment extends DialogFragment {
+
     }
 }
